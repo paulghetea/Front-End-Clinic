@@ -1,0 +1,27 @@
+
+
+p{
+  text-align:center;
+  font-size:3vw;
+  margin:20px 0 20px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  /*text-shadow: 0.05em 0 rgb(0, 0, 0);*/
+  color: rgb(10, 106, 216);
+}
+
+
+
+.gifResponsive {
+  border-radius:350px;
+  min-width: 200px;
+  max-width: 30%;
+  height: auto;
+  border:10px solid darkblue;
+
+}
+
+.fondo{
+
+  background: linear-gradient(0deg, rgba(64,137,221,1) 50%, rgba(255,255,255,1) 100%);
+}

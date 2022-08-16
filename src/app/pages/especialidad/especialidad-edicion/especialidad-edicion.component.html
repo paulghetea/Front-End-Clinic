@@ -1,0 +1,36 @@
+
+<form class="example-container" [formGroup]="form" #frmPaciente="ngForm" (ngSubmit)="operar()">
+
+  <div [hidden]="true">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="ID" required formControlName="id">
+      </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nombre" minlength="3" required formControlName="nombre">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('nombre')?.errors?.['minlength']">
+    Debe tener como mínimo 3 caracteres
+  </span>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Descripcion" minlength="3" required formControlName="descripcion">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('descripcion')?.errors?.['minlength']">
+    Debe tener como mínimo 3 caracteres
+  </span>
+
+
+
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">
+      <mat-icon>done</mat-icon>
+      <span>Aceptar</span>
+  </button>
+
+  <button mat-raised-button color="accent" type="button" routerLink="/pages/especialidad">
+      <mat-icon>close</mat-icon>
+      <span>Cancelar</span>
+  </button>
+</form>

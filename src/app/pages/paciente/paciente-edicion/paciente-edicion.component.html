@@ -1,0 +1,76 @@
+<form class="example-container" [formGroup]="form" #frmPaciente="ngForm" (submit)="aceptar()">
+
+  <div [hidden]="true">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="ID" required formControlName="id">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" required formControlName="nombres">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('nombres')?.errors?.['minlength']">
+    Debe tener como mínimo 3 caracteres
+  </span>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Apellido" required formControlName="apellidos">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('apellidos')?.errors?.['minlength']">
+    Debe tener como mínimo 3 caracteres
+  </span>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Dni" required formControlName="dni">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('dni')?.errors?.['maxlength']">
+    Debe tener como máximo 9 caracteres
+  </span>
+  <span class="error" *ngIf="this.form.get('dni')?.errors?.['pattern']">
+    El dni no es válido
+  </span>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Telefono" required formControlName="telefono" type="tel">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('telefono')?.errors?.['maxlength']">
+    Debe tener como máximo 9 caracteres
+  </span>
+  <span class="error" *ngIf="this.form.get('telefono')?.errors?.['minlength']">
+    Debe tener como mínimo 9 caracteres
+  </span>
+  <span class="error" *ngIf="this.form.get('telefono')?.errors?.['pattern']">
+    Este campo sólo admite números
+  </span>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Direccion" required formControlName="direccion">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('direccion')?.errors?.['minlength']">
+    Debe tener como mínimo 3 caracteres
+  </span>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" required formControlName="email">
+  </mat-form-field>
+  <span class="error" *ngIf="this.form.get('email')?.errors?.['email']">
+    El mail no es válido
+  </span>
+
+  <br>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">
+    <mat-icon>done</mat-icon>
+    <span>Aceptar</span>
+  </button>
+
+  <button mat-raised-button  color="accent" routerLink='/pages/paciente' type="button">
+    <mat-icon>close</mat-icon>
+    <span>Cancelar</span>
+  </button>
+
+  </form>

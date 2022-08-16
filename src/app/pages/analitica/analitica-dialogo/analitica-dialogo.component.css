@@ -1,0 +1,26 @@
+
+  img{
+      width: 150px;
+      text-align: center;
+  }
+
+
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.invalido {
+    color: red;
+}
+
+.error {
+  color: red;
+}
+
+

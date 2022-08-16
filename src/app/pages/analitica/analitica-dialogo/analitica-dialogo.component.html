@@ -1,0 +1,46 @@
+
+<div>
+  <h1 mat-dialog-title>ANALITICA</h1>
+
+
+  <div mat-dialog-content>
+      <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+          <mat-form-field>
+              <input matInput [(ngModel)]="analitica.nombre" type="text" placeholder="Nombre">
+          </mat-form-field>
+
+          <div [hidden]="todobien">
+            <span class="error">
+              Cada nombre debe tener mas de 3 caracteres y menos de 50
+            </span>
+          </div>
+
+          <mat-form-field>
+              <input matInput [(ngModel)]="analitica.descripcion" type="text" placeholder="Descripción">
+          </mat-form-field>
+
+          <div [hidden]="todobien2">
+            <span class="error">
+              Cada descripcion debe tener mas de 3 caracteres y menos de 500
+            </span>
+          </div>
+
+
+          <div [hidden]="general">
+            <span class="error">
+              Rellene bien todos los campos
+            </span>
+          </div>
+
+
+      </div>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-button (click)="cancelar()">Cancelar</button>
+      <button mat-button  cdkFocusInitial (click)="agregar()">Confirmar</button>
+  </div>
+</div>
+
+
+<!--[mat-dialog-close]="analitica"-->

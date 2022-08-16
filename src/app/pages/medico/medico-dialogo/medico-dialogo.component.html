@@ -1,0 +1,63 @@
+
+<div>
+    <h1 mat-dialog-title>MEDICO</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="medico.nombres" class="form-control" required type="text" placeholder="Nombre">
+            </mat-form-field>
+
+            <div [hidden]="todobien">
+              <span class="error">
+                Cada nombre debe tener mas de 3 caracteres y menos de 70
+              </span>
+            </div>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="medico.apellidos" type="text" required placeholder="Apellidos">
+            </mat-form-field>
+
+            <div [hidden]="todobien2">
+              <span class="error">
+                Cada apellido debe tener mas de 3 caracteres y menos de 70
+              </span>
+            </div>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="medico.cedula" type="text" required placeholder="Cedula">
+            </mat-form-field>
+
+            <div [hidden]="todobien3">
+              <span class="error">
+                Cada cedula debe tener 12 caracteres
+              </span>
+            </div>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="medico.fotoUrl" required type="text" placeholder="Foto URL">
+            </mat-form-field>
+
+            <div [hidden]="todobien4">
+              <span class="error">
+                Cada url de foto debe tener mas de 3 caracteres y menos de 500
+              </span>
+            </div>
+
+
+            <img *ngIf="modificar" src="{{medico.fotoUrl}}" alt="">
+
+            <div [hidden]="general">
+              <span class="error">
+                Rellene bien todos los campos
+              </span>
+            </div>
+
+
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button cdkFocusInitial (click)="agregar()">Confirmar</button>
+    </div>
+</div>

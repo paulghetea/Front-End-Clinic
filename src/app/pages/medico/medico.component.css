@@ -1,0 +1,44 @@
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+
+  th{
+    background: #0A69A7;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    text-shadow: 0.1em 0 rgb(0, 0, 0);
+    color: white;
+  }
+
+  tr{
+    background-image: linear-gradient(white, lightblue,#EDEDED);
+  }
+
+  .fondo{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgb(171, 221, 255), #0A69A7,#9cf8ff);
+  }
+
+  img{
+    width: 100px;
+    height: 100px;
+  }
+
+
+  ::ng-deep .mat-sort-header-arrow {
+
+    color: white;
+
+
+  }
+
+  ::ng-deep .hide-arrow .mat-sort-header-arrow {
+    color: #fff;
+  }
